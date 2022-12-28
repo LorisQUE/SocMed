@@ -1,17 +1,21 @@
 <template>
-  <header id="header">
-    <router-link to="/">Accueil</router-link>
-    <router-link to="/about">A propos</router-link>
-  </header>
+  <Header />
 
   <router-view />
   
-  <footer id="footer"></footer>
+  <Footer />
 </template>
 
 <script>
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Header,
+    Footer
+  }
 }
 </script>
 
@@ -33,22 +37,6 @@ body {
   height: 7vh;
   background-color: lightgray;
   padding: 0 2em 0 2em;
+  box-sizing: border-box;
 }
-
-#footer {
-  position: absolute;
-  bottom: 0;
-}
-
-#header {
-  display: flex;
-  align-items: center;
-  column-gap: 2em;
-}
-
-#header a {
-  color: black;
-  text-decoration: none;
-}
-
 </style>
