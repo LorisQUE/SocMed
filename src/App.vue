@@ -1,30 +1,33 @@
 <template>
   <Header />
 
-  <router-view />
+  <div id="view-container">
+    <router-view />
+  </div>
   
-  <Footer />
+  <!-- <Footer /> -->
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
+import Header from './components/Header.vue';
+// import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer
+    // Footer
   }
-}
+};
 </script>
 
 <style>
-body {
+body, h2 {
   margin: 0;
 }
 
 #app {
+  max-height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,8 +38,14 @@ body {
 #header, #footer {
   width: 100%;
   height: 7vh;
-  background-color: lightgray;
+  background-color: white;
   padding: 0 2em 0 2em;
   box-sizing: border-box;
+}
+
+#view-container{
+  background-color: whitesmoke;
+  min-height: calc(100vh - (7vh * 2));
+  padding: 2em 0;
 }
 </style>

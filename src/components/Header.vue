@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   column-gap: 2em;
+  border-bottom: 1px solid gray;
 }
 
 #header a {
