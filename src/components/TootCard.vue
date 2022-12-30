@@ -31,7 +31,8 @@
 
 <script>
     export default {
-        name: 'TootCard'
+        name: 'TootCard',
+        props: ['id']
     }
 </script>
 
@@ -47,9 +48,16 @@
         box-sizing: border-box;
         border-radius: 1em;
 
+        cursor: pointer;
+        transition: 250ms;
+
         background-color: white;
         border: 1px solid gray;
         /* box-shadow: .3em .3em .7em gray; */
+    }
+
+    .toot-card:hover {
+        background-color: whitesmoke;
     }
 
     .toot-card .toot-card-top {

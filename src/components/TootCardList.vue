@@ -1,7 +1,7 @@
 <template>
     <div id="toot-card-list-container">
         <div id="toot-card-list">
-            <TootCard v-for="index in 10" :key="index"/>
+            <TootCard v-for="index in 10" :key="index" @click="goToDetails(index)"/>
         </div>
     </div>
 </template>
@@ -13,7 +13,12 @@
         name: 'TootCardList',
         components: {
             TootCard
-        }   
+        },
+        methods: {
+            goToDetails(id) {
+                this.$router.push({ name: 'tootDetails', params: { id: id }})
+            }
+        }
     };
 </script>
 
