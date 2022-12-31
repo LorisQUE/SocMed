@@ -23,8 +23,14 @@
         </div>
         
         <div class="toot-card-bottom">
-            <button>Aimer</button>
-            <button>Commenter</button>
+            <div class="like-container">
+                <span>{{ likes }}</span>
+                <button @click.stop="like()">Aimer</button>
+            </div>
+            <div class="comment-container">
+                <span>0</span>
+                <button @click.stop="">Commenter</button>
+            </div>
         </div>
     </div>
 </template>
@@ -32,7 +38,19 @@
 <script>
     export default {
         name: 'TootCard',
-        props: ['id']
+        props: ['id'],
+        data() {
+            return {
+                isLiked: false,
+                likes: 15
+            }
+        },
+        methods: {
+            like() {
+                this.isLiked ? this.likes-- : this.likes++;
+                this.isLiked = !this.isLiked;
+            }
+        },
     }
 </script>
 
